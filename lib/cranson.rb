@@ -1,5 +1,7 @@
+require "nokogiri"
+
 require "cranson/version"
+require "cranson/parser"
 
 module Cranson
-  # Your code goes here...
 end

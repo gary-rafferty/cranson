@@ -1,5 +1,8 @@
 # Cranson
 
+A lightweight SAX parser for Fingal's [XML dataset](http://data.fingal.ie/datasets/xml/Planning_Applications.xml) of planning applications.
+
+The endgoal here is to provide a better way of retrieving and searching for planning applications. The current offering is clunky and awkward.  
 
 ## Installation
 

@@ -1,3 +1,5 @@
+require "observer"
+
 require "nokogiri"
 
 require "cranson/version"

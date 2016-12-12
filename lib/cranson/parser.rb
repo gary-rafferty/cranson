@@ -1,5 +1,7 @@
 module Cranson
   class Parser < Nokogiri::XML::SAX::Document
+    include Observable
+
     attr_reader :current_object, :current_attribute
 
     def start_element(name, attrs = [])
@@ -17,9 +19,14 @@ module Cranson
     end
 
     def end_element(name)
-      if name == 'Planning_Applications'
-        # @current_object is complete and ready
-      end
+      notify if name == 'Planning_Applications'
+    end
+
+    private
+
+    def notify
+      changed
+      notify_observers(@current_object)
     end
   end
 end

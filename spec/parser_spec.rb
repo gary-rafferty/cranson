@@ -54,7 +54,19 @@ describe Cranson::Parser do
   end
 
   describe '#end_element' do
-    pending 'behaviour not implemented yet'
+    describe 'when element is Planning_Applications' do
+      before do
+        parser.start_element('Planning_Applications')
+        parser.start_element('Planning_Reference')
+        parser.characters('ref1')
+        parser.end_element('Planning_Reference')
+      end
+
+      it 'will notify any observers' do
+        expect(parser).to receive(:notify_observers).with(parser.current_object)
+        parser.end_element('Planning_Applications')
+      end
+    end
   end
 end
  

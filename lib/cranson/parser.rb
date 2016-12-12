@@ -1,5 +1,7 @@
 module Cranson
   class Parser < Nokogiri::XML::SAX::Document
+    attr_reader :current_object, :current_attribute
+
     def start_element(name, attrs = [])
       if name == 'Planning_Applications'
         @current_object = Cranson::PlanningApplication.new

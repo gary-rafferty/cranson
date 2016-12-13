@@ -3,7 +3,14 @@
 require "bundler/setup"
 require "cranson"
 
+class Observer
+  def update(app)
+    p app
+  end
+end
+
 document = Cranson::Parser.new
+document.add_observer(Observer.new)
 parser = Nokogiri::XML::SAX::Parser.new(document)
 parser.parse(File.open("./input/applications_1216.xml"))
 

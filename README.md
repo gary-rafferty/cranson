@@ -22,7 +22,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+The parser implements the Observer pattern, and you should subscribe using a class that responds to an `update` method.
+
+```ruby
+
+class Observer
+
+  # this method will be invoked with a
+  # planning application object when one
+  # has been parsed
+  def update(planning_app)
+    p planning_app
+  end
+end
+
+document = Cranson::Parser.new                           # instantiate the document parser
+document.add_observer(Observer.new)                      # and then add your observer
+parser = Nokogiri::XML::SAX::Parser.new(document)        # instantiate the sax parser
+parser.parse(File.open("./input/applications_1216.xml")) # parse the file
+
+
+```
 
 ## Development
 

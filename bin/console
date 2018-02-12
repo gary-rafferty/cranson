@@ -9,10 +9,13 @@ class Observer
   end
 end
 
-document = Cranson::Parser.new
-document.add_observer(Observer.new)
-parser = Nokogiri::XML::SAX::Parser.new(document)
-parser.parse(File.open("./input/applications_1216.xml"))
+fingal_document = Cranson::Parsers::Fingal.new
+fingal_document.add_observer(Observer.new)
+fingal_parser = Nokogiri::XML::SAX::Parser.new(fingal_document)
+fingal_parser.parse(File.open("./input/fingal_1216.xml"))
+
+dcc_parser = Cranson::Parsers::Dcc.new
+dcc_parser.parse(File.open("./input/dcc_0218.csv"))
 
 require "irb"
 IRB.start

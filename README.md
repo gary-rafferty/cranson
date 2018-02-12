@@ -35,13 +35,22 @@ class Observer
     p planning_app
   end
 end
+```
 
-document = Cranson::Parser.new                           # instantiate the document parser
-document.add_observer(Observer.new)                      # and then add your observer
-parser = Nokogiri::XML::SAX::Parser.new(document)        # instantiate the sax parser
-parser.parse(File.open("./input/applications_1216.xml")) # parse the file
+Fingal applications are stored in XML format and parsed using a sax parser.  
+Usage:
+```ruby
+fingal_document = Cranson::Parsers::Fingal.new              # instantiate the document parser
+fingal_document.add_observer(Observer.new)                  # and then add your observer
+fingal_parser = Nokogiri::XML::SAX::Parser.new(document)    # instantiate the sax parser
+fingal_parser.parse(File.open("./input/fingal_1216.xml"))   # parse the file
+```
 
-
+Dublin City Council applications are stored in CSV format and parsed by iterating over rows.  
+Usage:
+```ruby
+dcc_parser = Cranson::Parsers::Dcc.new                      # instantiate the document parser
+dcc_parser.parse(File.open("./input/dcc_0218.csv"))         # parse the file
 ```
 
 ## Development

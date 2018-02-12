@@ -1,6 +1,9 @@
 # Cranson
 
-A lightweight SAX parser for Fingal's [XML dataset](http://data.fingal.ie/datasets/xml/Planning_Applications.xml) of planning applications.
+A lightweight parser for Irish planning applicatons.
+Currently supports parsing applications for the following authorities.
+* Fingal ([dataset](http://data.fingal.ie/datasets/xml/Planning_Applications.xml))
+* Dublin City Council ([dataset](http://opendata.dublincity.ie/PandDOpenData/DCC_PlanApps.csv))
 
 The endgoal here is to provide a better way of retrieving and searching for planning applications. The current offering is clunky and awkward.  
 

@@ -4,7 +4,8 @@ require "nokogiri"
 
 require "cranson/version"
 require "cranson/planning_application"
-require "cranson/parser"
+require "cranson/parsers/fingal"
+require "cranson/parsers/dcc"
 
 module Cranson
 end

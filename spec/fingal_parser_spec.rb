@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Cranson::Parser do
+describe Cranson::Parsers::Fingal do
 
-  let(:parser) { Cranson::Parser.new }
+  let(:parser) { Cranson::Parsers::Fingal.new }
 
   describe '#start_element' do
     describe 'when element is Planning_Applications' do

@@ -24,5 +24,10 @@ describe Cranson::Parsers::Dcc do
       expect(parser).to receive(:build_planning_application).twice
       parser.parse('file')
     end
+
+    it 'notifies observers for each parsed row' do
+      expect(parser).to receive(:notify).twice
+      parser.parse('file')
+    end
   end
 end

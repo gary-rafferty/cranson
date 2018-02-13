@@ -8,6 +8,7 @@ module Cranson
       def parse(file)
         each_row(file) do |row|
           @current_object = build_planning_application(row)
+          notify
         end
       end
 

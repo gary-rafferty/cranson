@@ -19,7 +19,7 @@ module Cranson
       end
 
       def each_row(file)
-        CSV.foreach(file, headers: true) { |row| yield row }
+        CSV.foreach(file, headers: true, encoding: 'windows-1251:utf-8') { |row| yield row }
       end
 
       def build_planning_application(data)

@@ -53,6 +53,7 @@ Dublin City Council applications are stored in CSV format and parsed by iteratin
 Usage:
 ```ruby
 dcc_parser = Cranson::Parsers::Dcc.new                      # instantiate the document parser
+dcc_parser.add_observer(Observer.new)                       # and then add your observer
 dcc_parser.parse(File.open("./input/dcc_0218.csv"))         # parse the file
 ```
 
